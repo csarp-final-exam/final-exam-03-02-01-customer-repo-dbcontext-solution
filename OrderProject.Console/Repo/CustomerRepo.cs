@@ -1,4 +1,5 @@
-﻿using OrderProject.Console.Models;
+﻿using Microsoft.EntityFrameworkCore;
+using OrderProject.Console.Models;
 
 namespace OrderProject.Console.Repo
 {
@@ -6,5 +7,9 @@ namespace OrderProject.Console.Repo
     {
         private readonly OrderContext _context = new OrderContext();
 
+        public async Task<List<Customer>> GetAllAsync()
+        {
+            return await _context.Customers.ToListAsync();
+        }
     }
 }
