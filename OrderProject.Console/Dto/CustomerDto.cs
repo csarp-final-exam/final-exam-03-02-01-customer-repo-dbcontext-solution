@@ -1,13 +1,13 @@
-﻿namespace OrderProject.Console.Models
+﻿namespace OrderProject.Console.Dto
 {
-    public class Customer
+    public class CustomerDto
     {
         public string Name { get; set; }
         public string Email { get; }
         public decimal Balance { get; private set; }
         public int BalanceIncreaseCount { get; private set; }
 
-        public Customer(string name, string email, decimal balance)
+        public CustomerDto(string name, string email, decimal balance)
         {
             if (balance < 0)
                 throw new InvalidOperationException("A keretösszeg nem lehet negatív!");

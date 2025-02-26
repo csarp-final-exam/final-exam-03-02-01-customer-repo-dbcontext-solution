@@ -1,12 +1,12 @@
 ﻿// See https://aka.ms/new-console-template for more information
-using OrderProject.Console.Models;
+using OrderProject.Console.Dto;
 
 Console.WriteLine("Hello, World!");
 
 try
 {
     // 1. Feladat: Negatív keretösszegű vásárló létrehozása és kivétel kezelése
-    var invalidCustomer = new Customer("Hibás Péter", "hibas.peter@example.com", -500);
+    var invalidCustomer = new CustomerDto("Hibás Péter", "hibas.peter@example.com", -500);
 }
 catch (Exception ex)
 {
@@ -14,7 +14,7 @@ catch (Exception ex)
 }
 
 // 1. Feladat: Érvényes vásárló létrehozása
-var valér = new Customer("Vásárló Valér", "vasarlo.valer@sokatveszek.hu", 20000);
+var valér = new CustomerDto("Vásárló Valér", "vasarlo.valer@sokatveszek.hu", 20000);
 Console.WriteLine(valér);
 
 // 2. Feladat: Keretösszeg növelése
@@ -41,12 +41,12 @@ Console.WriteLine("Valér új egyenlege: " + valér.Balance + " Ft");
 Console.WriteLine(valér);
 
 // 4. Feladat: Több vásárló létrehozása
-var customers = new Customer[]
+var customers = new CustomerDto[]
 {
-                new Customer("Anna Alapos", "anna.alapos@example.com", 15000),
-                new Customer("Béla Bátor", "bela.bator@example.com", 30000),
-                new Customer("Csaba Csendes", "csaba.csendes@example.com", 5000),
-                new Customer("Dénes Derék", "denes.derek@example.com", 0) // Nulla keretösszegű vásárló
+                new CustomerDto("Anna Alapos", "anna.alapos@example.com", 15000),
+                new CustomerDto("Béla Bátor", "bela.bator@example.com", 30000),
+                new CustomerDto("Csaba Csendes", "csaba.csendes@example.com", 5000),
+                new CustomerDto("Dénes Derék", "denes.derek@example.com", 0) // Nulla keretösszegű vásárló
 };
 
 foreach (var customer in customers)
